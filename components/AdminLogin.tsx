@@ -36,6 +36,7 @@ export default function AdminLogin({ onLogin }: { onLogin: () => void }) {
           onChange={e => setPassword(e.target.value)}
           required
           className="bg-black border border-red-700 text-white p-2 rounded focus:outline-none focus:border-red-400 placeholder-gray-400"
+          onKeyDown={e => { if (e.key === 'Enter') { (e.target as HTMLInputElement).form?.requestSubmit(); } }}
         />
         <button
           type="submit"
